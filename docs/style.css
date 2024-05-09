@@ -100,7 +100,7 @@ input {
 
 button,
 select {
-    text-transform: none
+    text-transform: uppercase;
 }
 
 [type=button],
