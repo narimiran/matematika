@@ -102,10 +102,12 @@
         [:td c]])]]])
 
 (defn resetiraj []
-  [:div.pure-u-1
-   [:button.pure-button {:type "button"
-                         :on-click #(reset! state initial-state)}
-    "izbriši sve"]])
+  (when (or (pos? (:tocnih @state))
+            (pos? (:netocni @state)))
+    [:div.pure-u-1
+     [:button.pure-button {:type "button"
+                           :on-click #(reset! state initial-state)}
+      "izbriši sve"]]))
 
 (defn app []
   [:div
