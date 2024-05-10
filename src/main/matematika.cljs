@@ -45,7 +45,7 @@
     (swap! state update :uzastopnih inc)))
 
 (defn netocan-odgovor []
-  (swap! state assoc :text (str "Neće biti, pokušaj ponovno..."))
+  (swap! state assoc :text "Neće biti, pokušaj ponovno...")
   (swap! state update :netocni inc)
   (swap! state assoc :uzastopnih 0)
   (swap! state assoc :odgovori []))
